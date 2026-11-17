@@ -109,5 +109,9 @@ It does not need to be. The fix is already on `main` (rule 3). The patch branch 
 **What if the bug only exists in the old version?**
 Still fix it on `main` first (for example with a test that reproduces it), then cherry-pick.
 
+**Can I still see the deleted patch branches?**
+Not in `git log`, but `git reflog` on your machine remembers every checkout and commit, including the branches you deleted.
+The reflog is local only (it is not pushed) and expires after a while, so rely on tags, not on the reflog.
+
 **Why `-x` on cherry-pick?**
 It adds a "cherry picked from commit ..." line, so you can always trace a patch commit back to `main`.
